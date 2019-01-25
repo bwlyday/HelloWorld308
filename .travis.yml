@@ -1,4 +1,11 @@
 language: java
 jdk:
 - oraclejdk8
-script: ant build
+
+addons:
+  sonarcloud:
+    organization: "bwlyday-github" # the key of the org you chose at step #3
+    token:
+      secure: 0e292409bce48fe96e553ef09bc9e596e78706eb
+script: ant build
+  - sonar-scanner
